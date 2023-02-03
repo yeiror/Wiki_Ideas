@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import { DarkModeProvider } from './components/DarkModeProvider';
-import Home from './pages/Home'
+import Home from './pages/HomePage'
 import './App.css';
 
 function App() {

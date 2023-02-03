@@ -5,7 +5,7 @@
 }
 @mixin text(){
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 @mixin flexCenter($direction, $gap, $justify, $align){
@@ -27,5 +27,5 @@ $dark:(
     'primary': #1D2D50,
     'secundary':#1E5F74,
     'bright': #FCDAB7,
-    'text': white,
+    'text': #CCCCCC,
 )

@@ -1,56 +1,14 @@
+@import "./variables";
+@import "./darkMode";
+@import './navBar_Footer';
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-@import './variables';
-@import './darkMode';
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-
-nav, footer{
-    height: 20vh;
-    max-width: 100%;
-    padding: 1rem 1rem 0 1rem;
-    @include flexCenter(row, 0, space-between, center);
-
-    a{
-        text-decoration: none;
-    }
-    img {
-        width: 40%;
-        position: relative;
-        bottom: -44%;
-       
-    }
-transition: background-color 2s;
-  
-}
-.light-nav{
-    background-color: map-get( $light , 'primary' );
-    color: map-get($map: $light, $key: 'text');
-   a{
-    color: map-get($map: $light, $key: 'text');
-   }
-}
-.dark-nav{
-    background-color: map-get( $dark , 'primary' );
-    color: map-get($map: $dark, $key: 'text');
-    a{
-        color: map-get($map: $dark, $key: 'text');
-       }
-   
-}
-
-main{
-    
-    width: 100%;
-    min-height: 60vh;
-    @include flexCenter(column,1, center,center);
-    flex-grow: 1;
-}
 
 #light{
 
@@ -61,4 +19,26 @@ main{
 #dark{
     background-color: map-get($map: $dark, $key: 'secundary' );
    color: map-get($map: $dark, $key: 'text' );
+}
+
+main {
+    width: 100%;
+    min-height: 60vh;
+    @include flexCenter(column, 1, center, center);
+    flex-grow: 1;
+  }
+
+  
+.institutional{
+    width: 60%;
+
+    @include flexCenter(column,1, center,center);
+   
+
+}
+.categories {
+    width: 100%;
+    min-height: 60vh;
+
+  
 }
