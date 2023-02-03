@@ -28,6 +28,7 @@ export default function NavBar() {
         })
 
         }
+        <input className='search'/>
       
         <label className="button" for="toggle">
             <input id="toggle" type="checkbox" onChange={handleOnChange}/>

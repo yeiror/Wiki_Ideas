@@ -1,0 +1,113 @@
+nav,
+footer {
+  height: 20vh;
+  max-width: 100%;
+  padding: 1.2rem 1rem 0 1.2rem;
+  position: sticky;
+  top: 0;
+  @include flexCenter(row, 0, space-between, center);
+
+  a {
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem;
+    letter-spacing: 0;
+    font-weight: bolder;
+
+    &:hover,
+    :active {
+      letter-spacing: 2px;
+      text-transform:uppercase;
+      transition: all 280ms ease-in-out;
+    }
+
+    &:after,
+    :before {
+      backface-visibility: hidden;
+      border: 1px solid rgba(#fff, 0);
+      bottom: 0px;
+      content: " ";
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      transition: all 280ms ease-in-out;
+      width: 0;
+    }
+
+    &:hover:after,:hover:before {
+      backface-visibility: hidden;
+      border-color: #fff;
+      transition: width 350ms ease-in-out;
+      width: 70%;
+    }
+
+    &:hover:before {
+      bottom: auto;
+      top: 0;
+      width: 100%;
+    }
+  }
+  img {
+    width: 40%;
+    position: relative;
+    bottom: -44%;
+  }
+  .search {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-style: none;
+    background-color: transparent;
+    padding: 10px;
+    transition-duration: 500ms;
+    cursor: pointer;
+    overflow: hidden;
+    background-image: url("/public/search.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:focus {
+      min-width: 200px;
+      max-width: 400px;
+      border-radius: 5px;
+      cursor: text;
+      outline: none;
+      background-color: transparent;
+      background-position-x: right;
+      background-size: 15px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+  }
+
+  transition: background-color 2s;
+}
+.light-nav {
+  background-color: map-get($light, "primary");
+  color: map-get($map: $light, $key: "text");
+  a {
+    color: map-get($map: $light, $key: "text");
+
+    .search {
+      background-image: url("/public/search_light.png");
+      
+      &:hover {
+        border: 1px solid map-get($map: $light, $key: "text");
+      }
+      
+    }
+  }
+}
+.dark-nav {
+  background-color: map-get($dark, "primary");
+  color: map-get($map: $dark, $key: "text");
+  a {
+    color: map-get($map: $dark, $key: "text");
+  }
+   .search:focus {
+    color: map-get($map: $dark, $key: "text");
+    border: 1px solid map-get($map: $dark, $key: "text");
+     
+    }
+    
+}

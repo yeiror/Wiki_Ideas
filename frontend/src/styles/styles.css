@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .button {
   display: inline-block;
-  width: 50px;
-  height: 20px;
+  width: 42px;
+  height: 17px;
   background-color: rgba(255, 255, 255, 0.568);
   border-radius: 30px;
   cursor: pointer;
-  padding: 0;
 }
 
 #toggle {
@@ -15,16 +14,16 @@
 
 .slider {
   display: block;
-  font-size: 10px;
   position: relative;
 }
 
 .slider::after {
   content: "";
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   background-color: #e03c3c;
   background-image: url("/public/light.png");
+  background-position: 50% 50%;
   border: 2px solid rgba(255, 255, 255, 0.373);
   border-radius: 50%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
@@ -44,16 +43,14 @@
   transform: translateX(25px) rotate(360deg);
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-nav, footer {
+nav,
+footer {
   height: 20vh;
   max-width: 100%;
-  padding: 1rem 1rem 0 1rem;
+  padding: 1.2rem 1rem 0 1.2rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -61,13 +58,84 @@ nav, footer {
   gap: 0 rem;
   transition: background-color 2s;
 }
-nav a, footer a {
+nav a,
+footer a {
   text-decoration: none;
+  position: relative;
+  padding: 0.5rem;
+  letter-spacing: 0;
+  font-weight: bolder;
 }
-nav img, footer img {
+nav a:hover,
+nav a :active,
+footer a:hover,
+footer a :active {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 280ms ease-in-out;
+}
+nav a:after,
+nav a :before,
+footer a:after,
+footer a :before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+nav a:hover:after, nav a :hover:before,
+footer a:hover:after,
+footer a :hover:before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-color: #fff;
+  transition: width 350ms ease-in-out;
+  width: 70%;
+}
+nav a:hover:before,
+footer a:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 100%;
+}
+nav img,
+footer img {
   width: 40%;
   position: relative;
   bottom: -44%;
+}
+nav .search,
+footer .search {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-style: none;
+  background-color: transparent;
+  padding: 10px;
+  transition-duration: 500ms;
+  cursor: pointer;
+  overflow: hidden;
+  background-image: url("/public/search.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+nav .search:focus,
+footer .search:focus {
+  min-width: 200px;
+  max-width: 400px;
+  border-radius: 5px;
+  cursor: text;
+  outline: none;
+  background-color: transparent;
+  background-position-x: right;
+  background-size: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .light-nav {
@@ -77,13 +145,39 @@ nav img, footer img {
 .light-nav a {
   color: black;
 }
+.light-nav a .search {
+  background-image: url("/public/search_light.png");
+}
+.light-nav a .search:hover {
+  border: 1px solid black;
+}
 
 .dark-nav {
   background-color: #1D2D50;
-  color: white;
+  color: #CCCCCC;
 }
 .dark-nav a {
-  color: white;
+  color: #CCCCCC;
+}
+.dark-nav .search:focus {
+  color: #CCCCCC;
+  border: 1px solid #CCCCCC;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#light {
+  background-color: #579BB1;
+  color: black;
+}
+
+#dark {
+  background-color: #1E5F74;
+  color: #CCCCCC;
 }
 
 main {
@@ -97,12 +191,17 @@ main {
   flex-grow: 1;
 }
 
-#light {
-  background-color: #579BB1;
-  color: black;
+.institutional {
+  width: 60%;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1 rem;
 }
 
-#dark {
-  background-color: #1E5F74;
-  color: white;
+.categories {
+  width: 100%;
+  min-height: 60vh;
 }/*# sourceMappingURL=styles.css.map */

@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import NavBar from '../components/NavBar'
 import {DarkModeContext} from '../components/DarkModeProvider';
 import Footer from '../components/Footer';
+
 export default function Layout(props) {
   const {darkMode}= useContext(DarkModeContext);
  
