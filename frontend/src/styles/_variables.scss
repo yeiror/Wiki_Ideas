@@ -1,0 +1,31 @@
+@mixin title(){
+    font-weight: 900;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+@mixin text(){
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+@mixin flexCenter($direction, $gap, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap rem;
+    
+}
+$light:(
+    'primary': #E1D7C6,
+    'secundary':#F8F4EA,
+    'bright': #579BB1,
+    'text': black,
+);
+
+$dark:(
+    'primary': #1D2D50,
+    'secundary':#1E5F74,
+    'bright': #FCDAB7,
+    'text': white,
+)
