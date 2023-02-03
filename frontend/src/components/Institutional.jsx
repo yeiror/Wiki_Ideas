@@ -1,6 +1,11 @@
-
 import React, {useEffect, useState} from "react";
-
+/**
+ * Component de información institucional con efecto fadeout
+ * Para modificar el estilo sin hover o buttons, tomo el window.scroll y uso un useState para cambiar los estilos en línea
+ * El hook useEffect toma el evento y si es superior a cierto nro cambia el estado de true a false 
+ * no me fue posible aplicar display none para subir el elemento que le sigue
+ * @returns 
+ */
 export default function Institutional() {
 
   let [onScreen, setOnScreen]= useState(true)

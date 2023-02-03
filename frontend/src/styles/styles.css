@@ -193,7 +193,6 @@ main {
 
 .institutional {
   width: 60%;
-  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

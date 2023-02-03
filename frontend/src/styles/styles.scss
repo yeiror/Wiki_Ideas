@@ -31,7 +31,7 @@ main {
   
 .institutional{
     width: 60%;
-    min-height: 60vh;
+
     @include flexCenter(column,1, center,center);
    
 
@@ -39,5 +39,6 @@ main {
 .categories {
     width: 100%;
     min-height: 60vh;
+
   
 }
